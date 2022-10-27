@@ -1,5 +1,5 @@
-const homeScore = 0;
-const guestScore = 0;
+let homeScore = 0;
+let guestScore = 0;
 const homeEl = document.getElementById("home-el");
 const guestEl = document.getElementById("guest-el");
 
@@ -7,34 +7,34 @@ homeEl.textContent = homeScore;
 guestEl.textContent = guestScore;
 
 function addOneH() {
-    const currentHome = homeScore + 1;
-    homeEl.textContent = currentHome;
+    homeScore = homeScore + 1
+    homeEl.textContent = homeScore;
 }
 
 function addTwoH() {
-    const currentHome = homeScore + 2;
-    homeEl.textContent = currentHome;
+    homeScore = homeScore + 2
+    homeEl.textContent = homeScore;
 }
 
 function addThreeH() {
-    const currentHome = homeScore + 3;
-    homeEl.textContent = currentHome;
+    homeScore = homeScore + 3
+    homeEl.textContent = homeScore;
 }
 
-// function addOne() {
-//     const currentGuest = guestScore + 1;
-//     guestEl.textContent = currentGuest;
-// }
+function addOne() {
+    guestScore = guestScore + 1
+    guestEl.textContent = guestScore;
+}
 
-// function addTwo() {
-//     const currentGuest = guestScore + 2;
-//     guestEl.textContent = currentGuest;
-// }
+function addTwo() {
+    guestScore = guestScore + 2
+    guestEl.textContent = guestScore;
+}
 
-// function addThree() {
-//     const currentGuest = guestScore + 3;
-//     guestEl.textContent = currentGuest;
-// }
+function addThree() {
+    guestScore = guestScore + 3
+    guestEl.textContent = guestScore;
+}
 
 function reset() {
    const currentHome = homeScore * 0;

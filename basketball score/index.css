@@ -11,3 +11,15 @@ body {
 h3 {
     color: #F3F4F6;
 }
+
+.score {
+    color: red;
+    background: #080001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+    width: 120px;
+    font-size: 35px;
+    font-family: 
+}
