@@ -22,8 +22,9 @@ button{
     width: 150px;
     background: goldenrod;
     font-weight: bold;
-    font-size: .6em;
+    font-size: .65em;
     padding: 5px 0;
     border: none;
     border-radius: 2px;
+    margin: 2px 0;
 }
