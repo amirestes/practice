@@ -97,14 +97,13 @@ let characterInput = document.getElementById("characterInput");
 let characterLengthInput = document.getElementById("submit");
 
 characterLengthInput.addEventListener("click", () => {
-  let characterLength = Number(characterInput.value);
-  console.log(characterLength);
+  let characterLength = characterInput.value;
 });
 
 function generatePassword() {
   let randomPasswordOne = [];
   let randomPasswordTwo = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < characterInput.value; i++) {
     let randomIndexOne = Math.floor(Math.random() * characters.length);
     let randomIndexTwo = Math.floor(Math.random() * characters.length);
     randomPasswordOne.push(characters[randomIndexOne]);
