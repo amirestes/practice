@@ -4,7 +4,17 @@ body {
     color: #D5D4D8;
     font-family: "Inter";
     font-size: 20px;
+}
 
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 100px;
+}
+
+.passwordDiv {
+    display: flex;
+    flex-direction: row;
 }
 
 h1 {
@@ -35,4 +45,5 @@ button {
     background: #273549;
     border-radius: 6px;
     color: #55F991;
+    margin: 15px;
 }

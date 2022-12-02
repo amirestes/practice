@@ -4,12 +4,16 @@
     </head>
     <body>
         <main>
-            <h1>Generate a <span>random password</span></h1>
+            <h1>Generate a <br><span>random password</span></h1>
             <p>Never us an insecure password again.</p>
-            <button>Generate passwords</button>
-            <div class="password" id="password1-el"></div>
-            <div class="password" id="password2-el"></div>
+            <button onClick="generatePassword()">Generate passwords</button>
+            <br>
             <img src="img/Line 17.png" alt="Line">
+            <div class="passwordDiv">
+                <div class="password" id="password1-el"></div>
+                <div class="password" id="password2-el"></div>
+            </div>
+            
         </main>
         <script src="index.js"></script>
     </body>
