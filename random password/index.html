@@ -7,10 +7,12 @@
             <h1>Generate a <br><span>random password</span></h1>
             <p>Never use an insecure password again.</p>
             <div>
-                <input type="text" id="characterInput" placeholder="How many characters?"><button id="submit">Submit</button>
+                <input type="text" id="characterInput" placeholder="How many characters?">
+        
             </div>
-            <div class="toggle">
-                <input type="checkbox" id="toggle" name="special" value="checked" checked><label for="special">Special Characters</label>
+            <div class="toggleDiv">
+                <input type="checkbox" class="toggle" id="toggleSpecial" name="special" value="checked" checked><label for="special">Special Characters</label>
+                <!-- <input type="checkbox" class="toggle" id="toggleNumber"  name="numbers" value="checked" checked><label for="numbers">Numbers</label> -->
             </div>
             <div>
                 <button onClick="generatePassword()">Generate   passwords</button>

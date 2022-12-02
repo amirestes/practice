@@ -92,15 +92,12 @@ const characters = [
   "/",
 ];
 let noSpecialCharacters = characters.slice(0, 62);
+let noNumbers = characters.slice(52, 62);
 let passwordOneEl = document.getElementById("password1-el");
 let passwordTwoEl = document.getElementById("password2-el");
 let characterInput = document.getElementById("characterInput");
-let characterLengthInput = document.getElementById("submit");
-let toggleSpecial = document.querySelector("#toggle");
-
-characterLengthInput.addEventListener("click", () => {
-  let characterLength = characterInput.value;
-});
+let toggleSpecial = document.querySelector("#toggleSpecial");
+let toggleNumber = document.querySelector("#toggleNumber");
 
 function generatePassword() {
   let randomPasswordOne = [];
@@ -127,6 +124,7 @@ function generatePassword() {
       passwordTwoEl.textContent = randomPasswordTwo.join(" ");
     }
   }
+  // toggleNumberSelector();
 }
 
 const reset = () => {
@@ -135,3 +133,30 @@ const reset = () => {
   characterInput.value = "";
   toggleSpecial.checked = true;
 };
+
+// const toggleNumberSelector = () => {
+//   let randomPasswordOne = [];
+//   let randomPasswordTwo = [];
+//   let randomIndexOne = Math.floor(Math.random() * noNumbers.length);
+//   let randomIndexTwo = Math.floor(Math.random() * noNumbers.length);
+
+//   if (toggleNumber.checked) {
+//     for (let i = 0; i < characterInput.value; i++) {
+//       randomIndexOne = Math.floor(Math.random() * characters.length);
+//       randomIndexTwo = Math.floor(Math.random() * characters.length);
+//       randomPasswordOne.push(characters[randomIndexOne]);
+//       randomPasswordTwo.push(characters[randomIndexTwo]);
+//       passwordOneEl.textContent = randomPasswordOne.join(" ");
+//       passwordTwoEl.textContent = randomPasswordTwo.join(" ");
+//     }
+//   } else {
+//     for (let i = 0; i < characterInput.value; i++) {
+//       randomIndexOne = Math.floor(Math.random() * noNumbers.length);
+//       randomIndexTwo = Math.floor(Math.random() * noNumbers.length);
+//       randomPasswordOne.push(noNumbers[randomIndexOne]);
+//       randomPasswordTwo.push(noNumbers[randomIndexTwo]);
+//       passwordOneEl.textContent = randomPasswordOne.join(" ");
+//       passwordTwoEl.textContent = randomPasswordTwo.join(" ");
+//     }
+//   }
+// };
