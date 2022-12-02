@@ -46,4 +46,6 @@ button {
     border-radius: 6px;
     color: #55F991;
     margin: 15px;
+    text-align: center;
+    padding-top: 15px;
 }

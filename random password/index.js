@@ -91,7 +91,23 @@ const characters = [
   "?",
   "/",
 ];
+let passwordOneEl = document.getElementById("password1-el");
+let passwordTwoEl = document.getElementById("password2-el");
 
 function generatePassword() {
-  console.log("button pressed");
+  let randomPasswordOne = [];
+  let randomPasswordTwo = [];
+  for (let i = 0; i < 10; i++) {
+    let randomIndexOne = Math.floor(Math.random() * characters.length);
+    let randomIndexTwo = Math.floor(Math.random() * characters.length);
+    randomPasswordOne.push(characters[randomIndexOne]);
+    randomPasswordTwo.push(characters[randomIndexTwo]);
+  }
+  passwordOneEl.textContent = randomPasswordOne.join(" ");
+  passwordTwoEl.textContent = randomPasswordTwo.join(" ");
 }
+
+//let randomNumber = Math.floor(Math.random() * 13) + 1;
+
+// let randomIndexOne = Math.floor(Math.random() * characters.length);
+// characters[randomIndexOne]
