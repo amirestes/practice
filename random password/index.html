@@ -5,8 +5,14 @@
     <body>
         <main>
             <h1>Generate a <br><span>random password</span></h1>
-            <p>Never us an insecure password again.</p>
-            <button onClick="generatePassword()">Generate passwords</button>
+            <p>Never use an insecure password again.</p>
+            <div>
+                <input type="text" id="characterInput"><button id="submit">Submit</button>
+            </div>
+            <div>
+                <button onClick="generatePassword()">Generate   passwords</button>
+                <button onClick="reset()" id="reset">Reset</button>
+            </div>
             <br>
             <img src="img/Line 17.png" alt="Line">
             <div class="passwordDiv">
