@@ -97,7 +97,7 @@ let passwordTwoEl = document.getElementById("password2-el");
 function generatePassword() {
   let randomPasswordOne = [];
   let randomPasswordTwo = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 15; i++) {
     let randomIndexOne = Math.floor(Math.random() * characters.length);
     let randomIndexTwo = Math.floor(Math.random() * characters.length);
     randomPasswordOne.push(characters[randomIndexOne]);
