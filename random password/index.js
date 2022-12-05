@@ -101,9 +101,13 @@ let passwordTwoEl = document.getElementById("password2-el");
 let characterInput = document.getElementById("characterInput");
 let toggleSpecial = document.querySelector("#toggleSpecial");
 let toggleNumber = document.querySelector("#toggleNumber");
+let copyPasswordElOne = document.querySelector(".copyPasswordOne");
+let copyPasswordElTwo = document.querySelector(".copyPasswordTwo");
 
 function generatePassword() {
   toggleSwitch();
+  copyPasswordElOne.innerHTML = "Copy Password";
+  copyPasswordElTwo.innerHTML = "Copy Password";
 }
 
 const toggleSwitch = () => {
@@ -159,4 +163,6 @@ const reset = () => {
   characterInput.value = "";
   toggleSpecial.checked = true;
   toggleNumber.checked = true;
+  copyPasswordElOne.innerHTML = "";
+  copyPasswordElTwo.innerHTML = "";
 };

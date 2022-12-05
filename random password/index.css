@@ -54,6 +54,7 @@ button {
     text-align: center;
     padding-top: 15px;
     font-size: 15px;
+    
 }
 
 input {
@@ -108,4 +109,19 @@ input {
 
 label {
     margin-right: 15px;
+}
+
+.containerPassword {
+    display: flex;
+    flex-direction: column;
+}
+
+.copy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 400px;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
 }
