@@ -106,8 +106,7 @@ let copyPasswordElTwo = document.querySelector(".copyPasswordTwo");
 
 function generatePassword() {
   toggleSwitch();
-  copyPasswordElOne.innerHTML = "Copy Password";
-  copyPasswordElTwo.innerHTML = "Copy Password";
+  copyPassword();
 }
 
 const toggleSwitch = () => {
@@ -165,4 +164,9 @@ const reset = () => {
   toggleNumber.checked = true;
   copyPasswordElOne.innerHTML = "";
   copyPasswordElTwo.innerHTML = "";
+};
+
+const copyPassword = () => {
+  copyPasswordElOne.innerHTML = "Copy Password";
+  copyPasswordElTwo.innerHTML = "Copy Password";
 };
