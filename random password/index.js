@@ -156,6 +156,35 @@ const toggleSwitch = () => {
   }
 };
 
+const copyPassword = () => {
+  copyPasswordElOne.innerHTML =
+    '<button onclick="copyContentOne()">Copy Password</button>';
+  copyPasswordElTwo.innerHTML =
+    '<button class="copyPasswordTwo" onclick="copyContentTwo()">Copy Password</button>';
+};
+
+async function copyContentOne() {
+  try {
+    await navigator.clipboard.writeText(passwordOneEl.innerHTML);
+    console.log("Content copied to clipboard");
+    /* Resolved - text copied to clipboard successfully */
+  } catch (err) {
+    console.error("Failed to copy: ", err);
+    /* Rejected - text failed to copy to the clipboard */
+  }
+}
+
+async function copyContentTwo() {
+  try {
+    await navigator.clipboard.writeText(passwordTwoEl.innerHTML);
+    console.log("Content copied to clipboard");
+    /* Resolved - text copied to clipboard successfully */
+  } catch (err) {
+    console.error("Failed to copy: ", err);
+    /* Rejected - text failed to copy to the clipboard */
+  }
+}
+
 const reset = () => {
   passwordOneEl.textContent = "";
   passwordTwoEl.textContent = "";
@@ -164,9 +193,4 @@ const reset = () => {
   toggleNumber.checked = true;
   copyPasswordElOne.innerHTML = "";
   copyPasswordElTwo.innerHTML = "";
-};
-
-const copyPassword = () => {
-  copyPasswordElOne.innerHTML = "Copy Password";
-  copyPasswordElTwo.innerHTML = "Copy Password";
 };
