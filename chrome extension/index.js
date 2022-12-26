@@ -6,6 +6,7 @@ const ulEl = document.getElementById("ul-el");
 inputBtn.addEventListener("click", function () {
   myLeads.push(inputEl.value);
   renderLeads();
+  clearInput();
 });
 
 function renderLeads() {
@@ -14,4 +15,8 @@ function renderLeads() {
     listItems += `<li>${myLeads[i]}</li>`;
   }
   ulEl.innerHTML = listItems;
+}
+
+function clearInput() {
+  inputEl.value = "";
 }
