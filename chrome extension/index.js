@@ -10,5 +10,5 @@ inputBtn.addEventListener("click", function () {
 
 // Log out the items in the myLeads array using a for loop
 for (let i = 0; i < myLeads.length; i++) {
-//   ulEl.innerHTML = `<li>${myLeads[i]}</li>`;
+  ulEl.innerHTML += `<li>${myLeads[i]}</li>`;
 }
