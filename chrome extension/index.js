@@ -29,10 +29,5 @@ inputBtn.addEventListener("click", function () {
   myLeads.push(inputEl.value);
   localStorage.setItem("myLeads", JSON.stringify(myLeads));
   render(myLeads);
-  clearInput();
-  // console.log(localStorage.getItem("myLeads"));
-});
-
-function clearInput() {
   inputEl.value = "";
-}
+});
