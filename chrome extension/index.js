@@ -6,10 +6,16 @@ const deleteBtn = document.getElementById("delete-btn");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 const tabBtn = document.getElementById("tab-btn");
 
+const tabs = [{ url: "https://www.linkedin.com/in/per-harald-borgen/" }];
+
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
   render(myLeads);
 }
+
+tabBtn.addEventListener("click", function () {
+  console.log(tabs[0].url);
+});
 
 function render(leads) {
   let listItems = "";
