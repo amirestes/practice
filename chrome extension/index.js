@@ -6,17 +6,19 @@ const deleteBtn = document.getElementById("delete-btn");
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 const tabBtn = document.getElementById("tab-btn");
 
-const tabs = [{ url: "https://www.linkedin.com/in/per-harald-borgen/" }];
-
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
   render(myLeads);
 }
 
 tabBtn.addEventListener("click", function () {
-  myLeads.push(tabs[0].url);
-  localStorage.setItem("myLeads", JSON.stringify(myLeads));
-  render(myLeads);
+  // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+  // });
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    myLeads.push(tabs[0].url);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
+  });
 });
 
 function render(leads) {
