@@ -7,16 +7,21 @@
 // Example 2: If you pass in "best fruits" and ["Apples", "Bananas"], it should return:
 // "The 2 best fruits are Apples, Bananas"
 
+    
+           
 // Use both a for loop and a template string to solve the challenge
 function generateSentence(desc, arr) {
-    
-        if(desc === "largest countries") {
-           console.log(`The ${largestCountries.length} largest countries are ${largestCountries}`)
-        } else { 
-            console.log(`The ${bestFruit.length} best fruits are ${bestFruit}`)
+    let string = `The ${arr.length} ${desc} are `
+    const lastIndex = arr.length - 1
+    for (let i = 0; i < arr.length; i++) {
+        if (i === lastIndex) {
+            string += arr[i]
+        } else {
+            string += arr[i] + ", "
         }
     }
+    return string
+}
 
-const largestCountries = ["China", "India", "USA"]
-const bestFruit = ["Apples", "Bananas"]
-generateSentence("best fruit", bestFruit)
+const sentence = generateSentence("best fruit", ["Apples", "Bananas", "Oranges"])
+console.log(sentence)
