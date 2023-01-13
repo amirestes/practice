@@ -168,6 +168,7 @@ const catsData = [
     alt: "A cat looking sad",
   },
 ];
+const emotionRadios = document.getElementById("emotion-radios");
 
 function getEmotionsArray(cats) {
   const emotionArray = [];
@@ -181,7 +182,11 @@ function getEmotionsArray(cats) {
 
 function renderEmotionsRadios(cats) {
   const emotions = getEmotionsArray(cats);
-  console.log(emotions);
+  let emotionStr = "";
+  for (let emotion of emotions) {
+    emotionStr += `<p>${emotion}</p>`;
+  }
+  emotionRadios.innerHTML = emotionStr;
 }
 
 renderEmotionsRadios(catsData);
