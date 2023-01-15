@@ -6,7 +6,11 @@ function getEmotionsArray(cats) {
   const emotionArray = [];
   for (let cat of cats) {
     for (let emotion of cat.emotionTags) {
-      emotionArray.push(emotion);
+      if (emotionArray.includes(emotion)) {
+        console.log("no duplicates");
+      } else {
+        emotionArray.push(emotion);
+      }
     }
   }
   return emotionArray;
@@ -17,7 +21,12 @@ function renderEmotionsRadios(cats) {
   let emotionStr = "";
   for (let emotion of emotions) {
     emotionStr += `<div class="radio">
-        <label for="${emotion}">${emotion}</label><input type="radio" id="${emotion}" value="${emotion}">
+        <label for="${emotion}">${emotion}</label>
+        <input
+          type="radio"
+          id="${emotion}" 
+          value="${emotion}" 
+          name="emotions">
         </div>  `;
   }
   emotionRadios.innerHTML = emotionStr;
