@@ -2,9 +2,9 @@ import { catsData } from "./data.js";
 
 const emotionRadios = document.getElementById("emotion-radios");
 
-emotionRadios.addEventListener("change", highLightCheckedOption);
+emotionRadios.addEventListener("change", highlightCheckedOption);
 
-function highLightCheckedOption(e) {
+function highlightCheckedOption(e) {
   document.getElementById(e.target.id).parentElement.classList.add("highlight");
 }
 
