@@ -5,6 +5,10 @@ const emotionRadios = document.getElementById("emotion-radios");
 emotionRadios.addEventListener("change", highlightCheckedOption);
 
 function highlightCheckedOption(e) {
+  const radioClassArray = document.getElementsByClassName("radio");
+  for (let radio of radioClassArray) {
+    radio.classList.remove("highlight");
+  }
   document.getElementById(e.target.id).parentElement.classList.add("highlight");
 }
 
