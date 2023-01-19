@@ -6,17 +6,21 @@ const getImageBtn = document.getElementById("get-image-btn");
 emotionRadios.addEventListener("change", highlightCheckedOption);
 getImageBtn.addEventListener("click", getMatchingCatsArray);
 
-function getMatchingCatsArray() {
-  const checkedRadio = document.querySelector('input[type="radio"]:checked');
-  console.log(checkedRadio.value);
-}
-
 function highlightCheckedOption(e) {
   const radioClassArray = document.getElementsByClassName("radio");
   for (let radio of radioClassArray) {
     radio.classList.remove("highlight");
   }
   document.getElementById(e.target.id).parentElement.classList.add("highlight");
+}
+
+function getMatchingCatsArray() {
+  if (document.querySelector('input[type="radio"]:checked')) {
+    const selectedEmotion = document.querySelector(
+      'input[type="radio"]:checked'
+    ).value;
+    console.log(selectedEmotion);
+  }
 }
 
 function getEmotionsArray(cats) {
