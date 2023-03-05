@@ -7,6 +7,7 @@ const gifsOnly = document.getElementById("gifs-only-option");
 emotionRadios.addEventListener("change", highlightCheckedOption);
 getImageBtn.addEventListener("click", getMatchingCatsArray);
 
+//Adds a highlight to the selected radio button
 function highlightCheckedOption(e) {
   const radioClassArray = document.getElementsByClassName("radio");
   for (let radio of radioClassArray) {
@@ -16,11 +17,14 @@ function highlightCheckedOption(e) {
 }
 
 function getMatchingCatsArray() {
+  //if a radio is checked, it will store the value in a variable called selectedEmotion
   if (document.querySelector('input[type="radio"]:checked')) {
     const selectedEmotion = document.querySelector(
       'input[type="radio"]:checked'
     ).value;
+    //if the Gifs Only is checked the value will be saved in a variable called isGiv
     let isGif = gifsOnly.checked;
+    //Creates an array called matchingCatsArray with the emotion tags from the catsData object. If the Gifs Only is checked it will return the objects with the same emotion tag if they are a Gif. Otherwise it will return all matching emotion tags
     const matchingCatsArray = catsData.filter((tag) => {
       if (isGif) {
         return tag.emotionTags.includes(selectedEmotion) && tag.isGif;
@@ -32,6 +36,7 @@ function getMatchingCatsArray() {
   }
 }
 
+//Loops over the objects to match the emotion tag
 function getEmotionsArray(cats) {
   const emotionArray = [];
   for (let cat of cats) {
@@ -44,6 +49,7 @@ function getEmotionsArray(cats) {
   return emotionArray;
 }
 
+//Renders the available emotion tags from the objects in a list with a radio button.
 function renderEmotionsRadios(cats) {
   const emotions = getEmotionsArray(cats);
   let emotionStr = "";
