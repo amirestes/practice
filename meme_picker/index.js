@@ -21,10 +21,13 @@ function getMatchingCatsArray() {
       'input[type="radio"]:checked'
     ).value;
     let isGif = gifsOnly.checked;
-
-    const matchingCatsArray = catsData.filter((tag) =>
-      tag.emotionTags.includes(selectedEmotion)
-    );
+    const matchingCatsArray = catsData.filter((tag) => {
+      if (isGif) {
+        return tag.emotionTags.includes(selectedEmotion) && tag.isGif;
+      } else {
+        return tag.emotionTags.includes(selectedEmotion);
+      }
+    });
     console.log(matchingCatsArray);
   }
 }
