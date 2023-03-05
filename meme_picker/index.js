@@ -5,7 +5,7 @@ const getImageBtn = document.getElementById("get-image-btn");
 const gifsOnly = document.getElementById("gifs-only-option");
 
 emotionRadios.addEventListener("change", highlightCheckedOption);
-getImageBtn.addEventListener("click", getMatchingCatsArray);
+getImageBtn.addEventListener("click", renderCat);
 
 //Adds a highlight to the selected radio button
 function highlightCheckedOption(e) {
@@ -34,6 +34,22 @@ function getMatchingCatsArray() {
     });
     return matchingCatsArray;
   }
+}
+
+//Retrieves only one Cat object
+function getSingleCatObject() {
+  const catsArray = getMatchingCatsArray();
+  if (catsArray.length === 1) {
+    return catsArray[0];
+  } else {
+    let randomCat = catsArray[Math.floor(Math.random() * catsArray.length)];
+    return randomCat;
+  }
+}
+
+//Renders to DOM
+function renderCat() {
+  getSingleCatObject();
 }
 
 //Loops over the objects to match the emotion tag
