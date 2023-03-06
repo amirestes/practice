@@ -5,8 +5,10 @@ const getImageBtn = document.getElementById("get-image-btn");
 const gifsOnly = document.getElementById("gifs-only-option");
 const memeModalInner = document.getElementById("meme-modal-inner");
 const memeModal = document.getElementById("meme-modal");
+const button = document.getElementById("meme-modal-close-btn");
 
 emotionRadios.addEventListener("change", highlightCheckedOption);
+button.addEventListener("click", resetCat);
 getImageBtn.addEventListener("click", renderCat);
 
 //Adds a highlight to the selected radio button
@@ -16,6 +18,33 @@ function highlightCheckedOption(e) {
     radio.classList.remove("highlight");
   }
   document.getElementById(e.target.id).parentElement.classList.add("highlight");
+}
+
+//Close the meme
+function resetCat() {
+  memeModal.style.display = "none";
+}
+
+//Renders to DOM
+function renderCat() {
+  const catObject = getSingleCatObject();
+  memeModalInner.innerHTML = `<img
+      class="cat-img"
+      src="./images/${catObject.image}"
+      alt="${catObject.alt}"
+      >`;
+  memeModal.style.display = "flex";
+}
+
+//Retrieves only one Cat object
+function getSingleCatObject() {
+  const catsArray = getMatchingCatsArray();
+  if (catsArray.length === 1) {
+    return catsArray[0];
+  } else {
+    let randomCat = catsArray[Math.floor(Math.random() * catsArray.length)];
+    return randomCat;
+  }
 }
 
 function getMatchingCatsArray() {
@@ -36,28 +65,6 @@ function getMatchingCatsArray() {
     });
     return matchingCatsArray;
   }
-}
-
-//Retrieves only one Cat object
-function getSingleCatObject() {
-  const catsArray = getMatchingCatsArray();
-  if (catsArray.length === 1) {
-    return catsArray[0];
-  } else {
-    let randomCat = catsArray[Math.floor(Math.random() * catsArray.length)];
-    return randomCat;
-  }
-}
-
-//Renders to DOM
-function renderCat() {
-  const catObject = getSingleCatObject();
-  memeModalInner.innerHTML = `<img
-      class="cat-img"
-      src="./images/${catObject.image}"
-      alt="${catObject.alt}"
-      >`;
-  memeModal.style.display = "flex";
 }
 
 //Loops over the objects to match the emotion tag
