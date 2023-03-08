@@ -25,15 +25,13 @@ renderCharacter(hero);
 renderCharacter(monster);
 
 function renderCharacter(data) {
-  //   const {  } = data;
-  document.getElementById(
-    data.elementId
-  ).innerHTML = `<div class="character-card">
-      <h4 class="name">${data.name}</h4>
-      <img class="avatar" src="${data.avatar}"/>
-      <p class="health">health: <b> ${data.health} </b></p>
+  const { elementId, name, avatar, health, diceScore } = data;
+  document.getElementById(elementId).innerHTML = `<div class="character-card">
+      <h4 class="name">${name}</h4>
+      <img class="avatar" src="${avatar}"/>
+      <p class="health">health: <b> ${health} </b></p>
       <div class="dice-container">
-         <div class="dice"> ${data.diceScore} </div>
+         <div class="dice"> ${diceScore} </div>
          </div>
    </div>`;
 }
