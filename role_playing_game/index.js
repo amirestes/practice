@@ -10,7 +10,7 @@ const hero = {
   name: "Wizard",
   avatar: "images/wizard.png",
   health: 60,
-  diceScore: 6,
+  diceScore: [3, 1, 4],
   diceCount: 3,
 };
 
@@ -19,7 +19,7 @@ const monster = {
   name: "Orc",
   avatar: "images/orc.png",
   health: 10,
-  diceScore: 4,
+  diceScore: [2],
   diceCount: 1,
 };
 
@@ -29,10 +29,14 @@ renderCharacter(monster);
 function renderCharacter(data) {
   const { elementId, name, avatar, health, diceScore, diceCount } = data;
 
-  let diceHtml = "";
-  for (let i = 0; i < diceCount; i++) {
-    diceHtml += `<div class="dice">6</div>`;
-  }
+  //   let diceHtml = "";
+  //   for (let i = 0; i < diceCount; i++) {
+  //     diceHtml += `<div class="dice">${diceScore[i]}</div>`;
+  //   }
+
+  const diceHtml = diceScore
+    .map((dice) => `<div class="dice">${dice}</div>`)
+    .join("");
 
   document.getElementById(elementId).innerHTML = `<div class="character-card">
       <h4 class="name">${name}</h4>
