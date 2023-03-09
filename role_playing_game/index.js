@@ -29,11 +29,6 @@ renderCharacter(monster);
 function renderCharacter(data) {
   const { elementId, name, avatar, health, diceScore, diceCount } = data;
 
-  //   let diceHtml = "";
-  //   for (let i = 0; i < diceCount; i++) {
-  //     diceHtml += `<div class="dice">${diceScore[i]}</div>`;
-  //   }
-
   const diceHtml = diceScore
     .map((dice) => `<div class="dice">${dice}</div>`)
     .join("");
@@ -47,3 +42,13 @@ function renderCharacter(data) {
          </div>
    </div>`;
 }
+
+function getDiceRollArray(diceCount) {
+  const newDiceRolls = [];
+  for (let i = 0; i < diceCount; i++) {
+    newDiceRolls.push(Math.floor(Math.random() * 6) + 1);
+  }
+  console.log(newDiceRolls);
+}
+
+getDiceRollArray(3);
