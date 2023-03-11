@@ -1,29 +1,11 @@
+import characterData from "./data.js";
+
 //Random Dice roll
 function getDiceRollArray(diceCount) {
   return new Array(diceCount)
     .fill(0)
     .map(() => Math.floor(Math.random() * 6) + 1);
 }
-
-const characterData = {
-  //Hero object
-  hero: {
-    elementId: "hero",
-    name: "Wizard",
-    avatar: "images/wizard.png",
-    health: 60,
-    diceCount: 3,
-  },
-
-  //Monster object
-  monster: {
-    elementId: "monster",
-    name: "Orc",
-    avatar: "images/orc.png",
-    health: 10,
-    diceCount: 1,
-  },
-};
 
 //Character Constructor function
 function Character(data) {
