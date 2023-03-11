@@ -1,3 +1,5 @@
+import { Character } from "./Character.js";
+
 //Random Dice roll
 function getDiceRollArray(diceCount) {
   return new Array(diceCount)
