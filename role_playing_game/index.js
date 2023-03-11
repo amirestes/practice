@@ -33,26 +33,26 @@ function Character(data) {
       .map((num) => `<div class="dice">${num}</div>`)
       .join("");
   };
-   
-  //Renders character to DOM
+
   this.getCharacterHtml = function () {
     const { elementId, name, avatar, health, diceCount } = this;
 
     const diceHtml = this.getDiceHtml(diceCount);
 
-    document.getElementById(elementId).innerHTML = `<div class="character-card">
+    return `<div class="character-card">
       <h4 class="name">${name}</h4>
       <img class="avatar" src="${avatar}"/>
       <p class="health">health: <b> ${health} </b></p>
       <div class="dice-container">
          ${diceHtml}
          </div>
-   </div>`;
+      </div>`;
   };
 }
 
 const wizard = new Character(hero);
 const orc = new Character(monster);
 
-wizard.getCharacterHtml();
-orc.getCharacterHtml();
+//Renders character to DOM
+document.getElementById(wizard.elementId).innerHTML = wizard.getCharacterHtml();
+document.getElementById(orc.elementId).innerHTML = orc.getCharacterHtml();
