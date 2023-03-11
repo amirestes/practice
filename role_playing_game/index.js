@@ -14,7 +14,7 @@ function getDiceHtml(diceCount) {
 
 //Hero object
 const hero = {
-  elementId: "hero",
+  elementId: "hero",z
   name: "Wizard",
   avatar: "images/wizard.png",
   health: 60,
@@ -29,6 +29,15 @@ const monster = {
   health: 10,
   diceCount: 1,
 };
+
+//Character Constructor function
+function Character(data) {
+   this.elementId = data.elementId
+   this.name = data.name
+   this.avatar = data.avatar
+   this.health = data.health
+   this.diceCount = data.diceCount
+}
 
 //Renders the character to the DOM
 function renderCharacter(data) {
