@@ -1,5 +1,6 @@
 import characterData from "./data.js";
 import { Character } from "./Character.js";
+import { getDiceRollArray } from "./utils.js";
 
 //Renders character to DOM
 function render() {
@@ -8,7 +9,7 @@ function render() {
 }
 
 function attack() {
-  console.log("attack button working!");
+  render();
 }
 
 document.getElementById("attack-button").addEventListener("click", attack);
