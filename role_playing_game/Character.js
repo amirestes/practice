@@ -6,14 +6,16 @@ export function Character(data) {
 
   //Renders random dice to DOM
   this.getDiceHtml = function (diceCount) {
-    return getDiceRollArray(diceCount)
-      .map((num) => `<div class="dice">${num}</div>`)
-      .join("");
+    this.currentDiceScore.push(
+      getDiceRollArray(this.diceCount)
+      // .map((num) => `<div class="dice">${num}</div>`)
+      // .join("")
+    );
   };
 
   this.diceArray = getDicePlaceholderHtml(this.diceCount);
   this.getCharacterHtml = function () {
-    const { elementId, name, avatar, health, diceCount } = this;
+    const { elementId, name, avatar, health, diceCount, diceArray } = this;
 
     const diceHtml = this.getDiceHtml(diceCount);
 
@@ -22,7 +24,7 @@ export function Character(data) {
         <img class="avatar" src="${avatar}"/>
         <p class="health">health: <b> ${health} </b></p>
         <div class="dice-container">
-           ${this.diceArray}
+           ${diceArray}
            </div>
         </div>`;
   };
