@@ -16,3 +16,5 @@ document.getElementById("attack-button").addEventListener("click", attack);
 const wizard = new Character(characterData.hero);
 const orc = new Character(characterData.monster);
 render();
+
+function getDicePlaceholderHtml() {}
