@@ -9,6 +9,8 @@ function render() {
 }
 
 function attack() {
+  wizard.getDiceHtml();
+  orc.getDiceHtml();
   render();
 }
 
