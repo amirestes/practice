@@ -13,6 +13,14 @@ export function Character(data) {
       .join("");
   };
 
+  //Renders take damage
+  this.takeDamage = function (currentDiceScore) {
+    const attackScoreArray = this.currentDiceScore;
+    console.log(attackScoreArray);
+    console.log(`${this.name} is damaged`);
+  };
+
+  //Renders HTML
   this.getCharacterHtml = function () {
     const { elementId, name, avatar, health, diceCount, diceArray } = this;
 
