@@ -14,10 +14,11 @@ export function Character(data) {
   };
 
   //Renders take damage
-  this.takeDamage = function (currentDiceScore) {
-    const attackScoreArray = this.currentDiceScore;
-    console.log(attackScoreArray);
-    console.log(`${this.name} is damaged`);
+  this.takeDamage = function (attackScoreArray) {
+    const totalAttackScore = attackScoreArray.reduce((total, num) => {
+      return total + num;
+    });
+    this.health -= totalAttackScore;
   };
 
   //Renders HTML
