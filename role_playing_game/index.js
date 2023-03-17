@@ -12,7 +12,7 @@ function attack() {
   wizard.getDiceHtml();
   orc.getDiceHtml();
   wizard.takeDamage(orc.currentDiceScore);
-  orc.takeDamage(wizard.currentDiceScore);
+  orc.takeDamage(wizard .currentDiceScore);
   render();
 }
 
