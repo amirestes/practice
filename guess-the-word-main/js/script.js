@@ -9,6 +9,13 @@ const playAgain = document.querySelector(".play-again");
 
 const word = "magnolia";
 
+guessButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  const letter = letterInput.value;
+  console.log(letter);
+  letterInput.value = "";
+});
+
 function wordInProgressCircle() {
   //string convert to an array
   const wordArray = word.split("");
