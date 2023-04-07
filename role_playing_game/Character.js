@@ -1,12 +1,17 @@
 import { getDicePlaceholderHtml, getDiceRollArray } from "./utils.js";
 
+const getPercentage = (remainingHealth, maximumHealth) =>
+  (100 * remainingHealth) / maximumHealth;
+
 //Character Constructor function
 export function Character(data) {
   Object.assign(this, data);
   this.diceArray = getDicePlaceholderHtml(this.diceCount);
 
+  this.maxHealth = this.health;
+
   //Renders random dice to DOM
-  this.getDiceHtml = function (diceCount) {
+  this.getDiceHtml = function () {
     this.currentDiceScore = getDiceRollArray(this.diceCount);
     this.diceArray = this.currentDiceScore
       .map((num) => `<div class="dice">${num}</div>`)
@@ -15,14 +20,15 @@ export function Character(data) {
 
   //Renders take damage
   this.takeDamage = function (attackScoreArray) {
-    const totalAttackScore = attackScoreArray.reduce((total, num) => {
-      return total + num;
-    });
+    const totalAttackScore = attackScoreArray.reduce(
+      (total, num) => total + num
+    );
     this.health -= totalAttackScore;
     if (this.health <= 0) {
       this.health = 0;
       this.dead = true;
     }
+    console.log(getPercentage(this.health, this.maxHealth));
   };
 
   //Renders HTML
