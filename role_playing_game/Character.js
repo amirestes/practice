@@ -10,6 +10,11 @@ export function Character(data) {
 
   this.maxHealth = this.health;
 
+  this.getHealthBarHtml = () => {
+    const percent = getPercentage(this.health, this.maxHealth);
+    console.log(percent);
+  };
+
   //Renders random dice to DOM
   this.getDiceHtml = function () {
     this.currentDiceScore = getDiceRollArray(this.diceCount);
@@ -28,7 +33,6 @@ export function Character(data) {
       this.health = 0;
       this.dead = true;
     }
-    console.log(getPercentage(this.health, this.maxHealth));
   };
 
   //Renders HTML
@@ -36,7 +40,7 @@ export function Character(data) {
     const { elementId, name, avatar, health, diceCount, diceArray } = this;
 
     const diceHtml = this.getDiceHtml(diceCount);
-
+    const healthBar = this.getHealthBarHtml();
     return `<div class="character-card">
         <h4 class="name">${name}</h4>
         <img class="avatar" src="${avatar}"/>
