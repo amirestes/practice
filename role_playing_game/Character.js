@@ -1,10 +1,11 @@
-import { getDicePlaceholderHtml, getDiceRollArray } from "./utils.js";
-
-const getPercentage = (remainingHealth, maximumHealth) =>
-  (100 * remainingHealth) / maximumHealth;
+import {
+  getDicePlaceholderHtml,
+  getDiceRollArray,
+  getPercentage,
+} from "./utils.js";
 
 //Character Constructor function
-export function Character(data) {
+function Character(data) {
   Object.assign(this, data);
   this.diceArray = getDicePlaceholderHtml(this.diceCount);
 
@@ -37,6 +38,7 @@ export function Character(data) {
       style='width: ${percent}%'></div>
       </div>`;
   };
+
   //Renders HTML
   this.getCharacterHtml = function () {
     const { elementId, name, avatar, health, diceCount } = this;
@@ -54,3 +56,5 @@ export function Character(data) {
         </div>`;
   };
 }
+
+export default Character;

@@ -1,6 +1,6 @@
 import characterData from "./data.js";
-import { Character } from "./Character.js";
-import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js";
+import Character from "./Character.js";
+// import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js";
 
 function attack() {
   wizard.getDiceHtml();
@@ -21,10 +21,7 @@ function endGame() {
       ? "The Wizard is Victorious"
       : "The Orc is Victorious";
 
-  // console.log(endMessage);
-
   const endEmoji = wizard.health > 0 ? "🔮" : "☠️";
-
   document.body.innerHTML = `<div class="end-game">
         <h2>Game Over</h2>
         <h3>${endMessage}</h3>

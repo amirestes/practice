@@ -1,4 +1,4 @@
-import { Character } from "./Character.js";
+import Character from "./Character.js";
 
 //Random Dice roll
 function getDiceRollArray(diceCount) {
@@ -15,5 +15,7 @@ function getDicePlaceholderHtml(diceCount) {
     })
     .join("");
 }
+const getPercentage = (remainingHealth, maximumHealth) =>
+  (100 * remainingHealth) / maximumHealth;
 
-export { getDiceRollArray, getDicePlaceholderHtml };
+export { getDiceRollArray, getDicePlaceholderHtml, getPercentage };
