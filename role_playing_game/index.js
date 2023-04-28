@@ -1,6 +1,11 @@
 import characterData from "./data.js";
 import Character from "./Character.js";
 // import { getDiceRollArray, getDicePlaceholderHtml } from "./utils.js";
+let monstersArray = ["orc", "demon", "goblin"];
+
+function getNewMonster() {
+  const nextMonsterData = characterData[monstersArray.shift()];
+}
 
 function attack() {
   wizard.getDiceHtml();
