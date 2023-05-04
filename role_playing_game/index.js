@@ -11,8 +11,8 @@ function getNewMonster() {
 
 function attack() {
   if (!isWaiting) {
-    wizard.getDiceHtml();
-    monster.getDiceHtml();
+    wizard.setDiceHtml();
+    monster.setDiceHtml();
     wizard.takeDamage(monster.currentDiceScore);
     monster.takeDamage(wizard.currentDiceScore);
     render();
@@ -35,6 +35,7 @@ function attack() {
 }
 
 function endGame() {
+  isWaiting = true;
   const endMessage =
     wizard.health === 0 && monster.health === 0
       ? "No victors - all creatures are dead"
