@@ -1,4 +1,4 @@
-import "./styles.css";
+
 /* 
 write a program that uses console.log to print all the number from 1 to 100, 
 with two exceptions. For numbers divisible by 3, print "Fizz" instead of the
