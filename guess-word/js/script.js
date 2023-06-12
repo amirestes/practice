@@ -12,11 +12,7 @@ let originalWord = word.split("");
 
 let guessedArray = [];
 
-/* 
-    Write a function that will create a blank array, then take the variable word and convert the string into the blank array. Display the array as a dot in the word-in-progress.
-*/
-
-function dot(word) {
+const dot = (word) => {
   //create a blank array
   let wordArray = [];
   //Convert word to an array
@@ -25,7 +21,7 @@ function dot(word) {
   wordArray.map(() => wordArray.splice(wordArray.length, -[wordArray], "●"));
   //Displays the array in the word-in-progress element by using .slice to remove the original word from displaying by using the originalWord array to obtain the length
   wordInProgress.innerText = wordArray.slice(originalWord.length).join("");
-}
+};
 
 dot(word);
 
@@ -39,3 +35,8 @@ guessButton.addEventListener("click", (e) => {
   //resets the input value to an empty string
   letterInput.value = "";
 });
+
+/* 
+    Validate the letterInput is a letter.
+    const acceptedLetter = /[a-zA-Z]/;
+*/
