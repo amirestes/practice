@@ -10,6 +10,8 @@ let word = "magnolia";
 //convert word to an array to obtain the array length
 let originalWord = word.split("");
 
+let guessedArray = [];
+
 /* 
     Write a function that will create a blank array, then take the variable word and convert the string into the blank array. Display the array as a dot in the word-in-progress.
 */
@@ -28,8 +30,12 @@ function dot(word) {
 dot(word);
 
 guessButton.addEventListener("click", (e) => {
+  //prevents the form from reloading when the button is pushed
   e.preventDefault();
+  //variable for the input value
   const guess = letterInput.value;
-  console.log(guess);
+  //adds guess to the guessedArray
+  guessedArray.push(guess);
+  //resets the input value to an empty string
   letterInput.value = "";
 });
