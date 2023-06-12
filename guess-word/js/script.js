@@ -4,6 +4,7 @@ const remainingGuesses = document.querySelector(".remaining");
 const guessedLetters = document.querySelector(".guessed-letters");
 const guessButton = document.querySelector(".guess");
 const playAgainButton = document.querySelector(".play-again");
+const letterInput = document.querySelector("input");
 
 let word = "magnolia";
 //convert word to an array to obtain the array length
@@ -25,3 +26,10 @@ function dot(word) {
 }
 
 dot(word);
+
+guessButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  const guess = letterInput.value;
+  console.log(guess);
+  letterInput.value = "";
+});
