@@ -37,6 +37,7 @@ guessButton.addEventListener("click", (e) => {
   letterInput.value = "";
 
   validateLetter(guess);
+  makeGuess(guess);
 });
 
 const validateLetter = function (input) {
@@ -51,3 +52,20 @@ const validateLetter = function (input) {
     return input;
   }
 };
+
+// Below the function that checks input, create a new function called makeGuess that accepts a letter as the parameter.
+const makeGuess = (guess) => {
+  guess = guess.toUpperCase();
+  if (guessedArray.includes(guess)) {
+    message.innerText = "already guessed";
+  } else {
+    guessedArray.push(guess);
+    guessedLetters.innerText = guessedArray.join(" ");
+  }
+};
+// JavaScript is case sensitive, so it sees uppercase and lowercase letters as different characters. The easiest way to handle case-sensitivity is to convert all letters to one casing. We recommend converting your letter parameter to uppercase. Once the letter transforms to uppercase, check to see if your guessedLetters array already contains that letter.
+// If the player already guessed the same letter, update the message to inform the player they’ve already guessed that letter and try again. If they haven’t guessed that letter before, add the letter to the guessedLetters array.
+// Log out the guessedLetters array to the console.
+// Return to the event handler for the Guess button. Make sure that the variable mapped to the result of the function validates that the player’s input is returning a letter (as opposed to “undefined”). If it’s returning a letter, pass it as an argument to your makeGuess function.
+// Try a few letter guesses in the browser window. Ensure you’re seeing the guessedLetters array contents updating as you input new letters and click the button.
+// Add and commit your changes with the command line. Push the changes up to GitHub. Copy the link to your repo and submit it below. Part 2 of your project is donzo! ✅
