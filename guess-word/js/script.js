@@ -43,11 +43,11 @@ guessButton.addEventListener("click", (e) => {
 const validateLetter = function (input) {
   const acceptedLetter = /[a-zA-Z]/;
   if (input.length === 0) {
-    console.log("Please enter a letter");
+    message.innerText = "Please enter a letter";
   } else if (input.length > 1) {
-    console.log("Only enter one letter.");
+    message.innerText = "Only enter one letter.";
   } else if (!input.match(acceptedLetter)) {
-    console.log("Please enter a letter");
+    message.innerText = "Please enter a letter";
   } else {
     return input;
   }
@@ -76,4 +76,14 @@ const displayGuess = (guessedArray) => {
     }
   }
   wordInProgress.innerText = correctAnswer.join("");
+  winGame();
+};
+
+//<p class="highlight">You guessed correct the word! Congrats!</p>
+
+const winGame = () => {
+  if (word.toUpperCase() === wordInProgress.innerText) {
+    message.classList.add("win");
+    message.innerHTML = `<p class="highlight">You guessed correct the word! Congrats!</p>`;
+  }
 };
