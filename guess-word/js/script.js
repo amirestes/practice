@@ -34,7 +34,7 @@ guessButton.addEventListener("click", (e) => {
   //prevents the form from reloading when the button is pushed
   e.preventDefault();
   //assigns the input value to a variable
-  const guess = letterInput.value;
+  let guess = letterInput.value;
 
   const goodGuess = validateLetter(guess);
 
@@ -67,6 +67,8 @@ const makeGuess = (guess) => {
   } else {
     guessedArray.push(guess);
     guessedLetters.innerText = guessedArray.join(" ");
+    //counts the number of guesses
+    countGuesses(guess);
   }
   displayGuess(guessedArray);
 };
@@ -88,7 +90,16 @@ const displayGuess = (guessedArray) => {
 
 //Function to count guesses remaining
 
-const countGuesses = (guess) => {};
+const countGuesses = (guess) => {
+  const upperWord = word.toUpperCase();
+  if (!upperWord.includes(guess)) {
+    message.innerText = "The word does not contain this letter. Guess again.";
+    remainingGuesses -= 1;
+    console.log(remainingGuesses);
+  } else {
+    return (message.innerText = "Good guess!");
+  }
+};
 
 //Function to determine if the player has won
 const winGame = () => {
