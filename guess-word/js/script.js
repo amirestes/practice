@@ -27,12 +27,12 @@ const dot = (word) => {
 
 dot(word);
 
+//Event Listener when the guess button is pushed that stores the input value in a variable
 guessButton.addEventListener("click", (e) => {
   //prevents the form from reloading when the button is pushed
   e.preventDefault();
-  //adds guess to the guessedArray
+  //assigns the input value to a variable
   const guess = letterInput.value;
-  //guessedArray.push(guess);
   //resets the input value to an empty string
   letterInput.value = "";
 
@@ -40,8 +40,9 @@ guessButton.addEventListener("click", (e) => {
   makeGuess(guess);
 });
 
+//Function to check that one letter was entered
 const validateLetter = function (input) {
-  const acceptedLetter = /[a-zA-Z]/;
+  const acceptedLetter = /[a-zA-Z]/; //regex
   if (input.length === 0) {
     message.innerText = "Please enter a letter";
   } else if (input.length > 1) {
@@ -53,6 +54,7 @@ const validateLetter = function (input) {
   }
 };
 
+//Function to check if the letter has been guessed and if not to add it to the array to display guessed letters
 const makeGuess = (guess) => {
   guess = guess.toUpperCase();
   if (guessedArray.includes(guess)) {
@@ -64,6 +66,7 @@ const makeGuess = (guess) => {
   displayGuess(guessedArray);
 };
 
+//Function to display the guessed letters and display when a correct letter was guessed within the word.
 const displayGuess = (guessedArray) => {
   const wordUpper = word.toUpperCase();
   const wordArray = wordUpper.split("");
@@ -79,8 +82,7 @@ const displayGuess = (guessedArray) => {
   winGame();
 };
 
-//<p class="highlight">You guessed correct the word! Congrats!</p>
-
+//Function to determine if the player has won
 const winGame = () => {
   if (word.toUpperCase() === wordInProgress.innerText) {
     message.classList.add("win");
