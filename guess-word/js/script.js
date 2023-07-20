@@ -1,18 +1,20 @@
 const message = document.querySelector(".message");
 const wordInProgress = document.querySelector(".word-in-progress");
-const remainingGuesses = document.querySelector(".remaining");
+const remainingGuess = document.querySelector(".remaining");
 const guessedLetters = document.querySelector(".guessed-letters");
 const guessButton = document.querySelector(".guess");
 const playAgainButton = document.querySelector(".play-again");
 const letterInput = document.querySelector("input");
 
 let word = "magnolia";
-//variable for the input value
+const wordUpper = word.toUpperCase();
 
 //convert word to an array to obtain the array length
 let originalWord = word.split("");
 
 let guessedArray = [];
+
+let remainingGuesses = 8;
 
 const dot = (word) => {
   //create a blank array
@@ -33,11 +35,14 @@ guessButton.addEventListener("click", (e) => {
   e.preventDefault();
   //assigns the input value to a variable
   const guess = letterInput.value;
+
+  const goodGuess = validateLetter(guess);
+
+  if (goodGuess) {
+    makeGuess(guess);
+  }
   //resets the input value to an empty string
   letterInput.value = "";
-
-  validateLetter(guess);
-  makeGuess(guess);
 });
 
 //Function to check that one letter was entered
@@ -48,7 +53,7 @@ const validateLetter = function (input) {
   } else if (input.length > 1) {
     message.innerText = "Only enter one letter.";
   } else if (!input.match(acceptedLetter)) {
-    message.innerText = "Please enter a letter";
+    message.innerText = "Please enter a letter from A to Z";
   } else {
     return input;
   }
@@ -68,7 +73,6 @@ const makeGuess = (guess) => {
 
 //Function to display the guessed letters and display when a correct letter was guessed within the word.
 const displayGuess = (guessedArray) => {
-  const wordUpper = word.toUpperCase();
   const wordArray = wordUpper.split("");
   const correctAnswer = [];
   for (const letter of wordArray) {
@@ -81,6 +85,10 @@ const displayGuess = (guessedArray) => {
   wordInProgress.innerText = correctAnswer.join("");
   winGame();
 };
+
+//Function to count guesses remaining
+
+const countGuesses = (guess) => {};
 
 //Function to determine if the player has won
 const winGame = () => {
