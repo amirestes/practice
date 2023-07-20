@@ -99,6 +99,10 @@ const countGuesses = (guess) => {
   } else {
     return (message.innerText = "Good guess!");
   }
+
+  if (remainingGuesses === 0) {
+    return (message.innerText = "Game Over!");
+  }
 };
 
 //Function to determine if the player has won
