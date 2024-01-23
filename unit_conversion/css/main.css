@@ -1,0 +1,22 @@
+main {
+    margin: 0;
+    padding: 0;
+}
+
+/* Dark Mode */
+
+/* Light Mode Default */
+
+#inputValue {
+    background-color: #6943FF;
+    margin: 33 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff
+}
+
+h1 {
+    font-size: 28px;
+}
