@@ -7,7 +7,7 @@
     <title>Unit Conversion</title>
 </head>
 <body>
-    <main id="main">
+    <main id="main" class="light dark">
         <div id="inputValue">
             <h1>Metric/Imperial Unit Conversion</h1>
             <input type="text" id="unit">
@@ -33,7 +33,9 @@
                 </p>
             </div>
         </div>
-
+        <div class="toggleDiv">
+            <input type="checkbox" class="toggle" id="toggle" name="darkMode" value="checked" checked><label for="darkMode">Dark Mode</label>
+        </div>
 
     </main>
     <script src="./js/index.js" type="module" defer></script>
