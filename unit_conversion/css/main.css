@@ -88,7 +88,7 @@ button {
 }
 
 #convert {
-    background: #F4F4F4;
+   
     margin: 0;
     padding: 0;
     display: flex;
@@ -96,9 +96,9 @@ button {
     align-items: center;
     flex-direction: column;
 }
-#light {
-   background-color: #fff;
-    
+
+.light {
+    background: #F4F4F4;
 }
 
 .measure{
@@ -141,6 +141,19 @@ line-height: 20px; /* 142.857% */
 
 /* Dark Mode */
 
-#dark {
+.dark {
     background: #1F2937;
+    
+}
+
+.dark h4 {
+    color: #CCC1FF;
+}
+
+.dark p {
+    color: #fff;
+}
+
+.dark div{
+    background: #273549;
 }

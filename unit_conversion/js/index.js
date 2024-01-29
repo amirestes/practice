@@ -1,14 +1,25 @@
 const main = document.getElementById("main");
+const convertDiv = document.getElementById("convert");
+const measureDiv = document.querySelector(".measure");
 const toggle = document.getElementById("toggle");
 
 const toggleSwitch = () => {
-  if (!toggleSpecial.checked) {
-    main.classList.remove("dark");
-    main.classList.add("light");
-  } else {
-    main.classList.add("dark");
-    main.classList.remove("light");
-  }
+  //if switch is toggled off then dark mode is off. Removes dark class from convertDiv.
+  toggle.addEventListener("change", function () {
+    if (this.checked) {
+      convertDiv.classList.add("dark");
+      measureDiv.classList.add("dark");
+      convertDiv.classList.remove("light");
+      measureDiv.classList.remove("light");
+      console.log("dark");
+    } else {
+      convertDiv.classList.remove("dark");
+      measureDiv.classList.remove("dark");
+      convertDiv.classList.add("light");
+      measureDiv.classList.add("light");
+      console.log("light");
+    }
+  });
 };
 
 toggleSwitch();
