@@ -2,6 +2,12 @@ const main = document.getElementById("main");
 const convertDiv = document.getElementById("convert");
 const measureDiv = document.querySelector(".measure");
 const toggle = document.getElementById("toggle");
+const characterInput = document.getElementById("unit");
+
+//onclick function for the Convert button
+const clickMe = () => {
+  console.log("clicked");
+};
 
 const toggleSwitch = () => {
   //if switch is toggled off then dark mode is off. Removes dark class from convertDiv.
