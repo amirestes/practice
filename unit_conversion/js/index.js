@@ -7,12 +7,7 @@ const wrongCharacter = document.querySelector("h3");
 
 //onclick function for the Convert button
 const clickMe = () => {
-  if (characterInput.value.match(/[a-zA-Z]/)) {
-    wrongCharacter.innerText = `Please enter a number`;
-  } else {
-    console.log(characterInput.value);
-    wrongCharacter.innerText = "";
-  }
+  validateInput();
   characterInput.value = "";
 };
 
@@ -33,6 +28,16 @@ const toggleSwitch = () => {
       console.log("light");
     }
   });
+};
+
+//Validates a number was entered not a letter
+const validateInput = () => {
+  if (characterInput.value.match(/[a-zA-Z$&+,:;=?@#|'<>.^*()%!-]/)) {
+    wrongCharacter.innerText = `Please enter a number`;
+  } else {
+    console.log(characterInput.value);
+    wrongCharacter.innerText = "";
+  }
 };
 
 toggleSwitch();
