@@ -3,10 +3,17 @@ const convertDiv = document.getElementById("convert");
 const measureDiv = document.querySelector(".measure");
 const toggle = document.getElementById("toggle");
 const characterInput = document.getElementById("unit");
+const wrongCharacter = document.querySelector("h3");
 
 //onclick function for the Convert button
 const clickMe = () => {
-  console.log("clicked");
+  if (characterInput.value.match(/[a-zA-Z]/)) {
+    wrongCharacter.innerText = `Please enter a number`;
+  } else {
+    console.log(characterInput.value);
+    wrongCharacter.innerText = "";
+  }
+  characterInput.value = "";
 };
 
 const toggleSwitch = () => {
