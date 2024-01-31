@@ -11,6 +11,7 @@ const litSpan = document.querySelector("#gallons");
 const galSpan = document.querySelector("#liters");
 const kilSpan = document.querySelector("#kilos");
 const poundSpan = document.querySelector("#pounds");
+const body = document.querySelector("body");
 
 //onclick function for the Convert button
 const clickMe = () => {
@@ -20,20 +21,20 @@ const clickMe = () => {
 };
 
 const toggleSwitch = () => {
-  //if switch is toggled off then dark mode is off. Removes dark class from convertDiv.
+  //if switch is toggled off then dark mode is off
   toggle.addEventListener("change", function () {
     if (this.checked) {
       convertDiv.classList.add("dark");
       measureDiv.classList.add("dark");
+      body.classList.add("dark");
       convertDiv.classList.remove("light");
       measureDiv.classList.remove("light");
-      console.log("dark");
     } else {
       convertDiv.classList.remove("dark");
       measureDiv.classList.remove("dark");
+      body.classList.remove("dark");
       convertDiv.classList.add("light");
       measureDiv.classList.add("light");
-      console.log("light");
     }
   });
 };
@@ -44,6 +45,7 @@ const validateInput = () => {
   if (cI.match(/[a-zA-Z$&+,:;=?@#|'<>.^*()%!-]/)) {
     wrongCharacter.innerText = `Please enter a number`;
   } else {
+    // iterates over all the spans with a class of number
     for (let i = 0; i < numSpan.length; i++) {
       numSpan[i].innerText = cI;
     }
@@ -51,6 +53,7 @@ const validateInput = () => {
   }
 };
 
+// converts the number inputed and prints it
 const convertValue = () => {
   let cI = characterInput.value;
 

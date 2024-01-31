@@ -3,7 +3,8 @@ body{
     height: 285px;
     flex-shrink: 0;
     margin: auto;
-    background-color: lavender;
+    background-color: #F4F4F4;
+    font-family: Inter;
 }
 main {
     margin: 25px 0px 35px 0px;
@@ -14,7 +15,11 @@ main {
 input {
     color: #fff;
     display: inline;
-    align-items: center;
+    text-align: center;
+    font-family: Inter;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 800;
 }
 
 h3 {
@@ -124,8 +129,7 @@ button {
 }
 
 .measure{
-    width: 500px;
-    /* height: 108.573px; */
+    width: 545px;
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
@@ -134,8 +138,6 @@ button {
     border-radius: 4.681px 0px 0px 0px;
     background: var(--white, #FFF);
     margin: 15px auto;
-    /* padding: 15px; */
-
 }
 
 .measure h4 {
@@ -151,22 +153,18 @@ button {
 
 .measure p {
     color: #353535;
-
-text-align: center;
-/* text-sm/leading-5/font-normal */
-font-family: Inter;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px; /* 142.857% */
-
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
 }
 
 /* Dark Mode */
 
 .dark {
     background: #1F2937;
-    
 }
 
 .dark h4 {
@@ -177,6 +175,6 @@ line-height: 20px; /* 142.857% */
     color: #fff;
 }
 
-.dark div{
+.dark .measure{
     background: #273549;
 }
