@@ -4,6 +4,7 @@ const measureDiv = document.querySelector(".measure");
 const toggle = document.getElementById("toggle");
 const characterInput = document.getElementById("unit");
 const wrongCharacter = document.querySelector("h3");
+const numSpan = document.querySelectorAll(".number");
 
 //onclick function for the Convert button
 const clickMe = () => {
@@ -30,12 +31,16 @@ const toggleSwitch = () => {
   });
 };
 
-//Validates a number was entered not a letter
+//Validates a number was entered not a letter or special character
 const validateInput = () => {
-  if (characterInput.value.match(/[a-zA-Z$&+,:;=?@#|'<>.^*()%!-]/)) {
+  let cI = characterInput.value;
+  if (cI.match(/[a-zA-Z$&+,:;=?@#|'<>.^*()%!-]/)) {
     wrongCharacter.innerText = `Please enter a number`;
   } else {
-    console.log(characterInput.value);
+    console.log(cI);
+    for (let i = 0; i < numSpan.length; i++) {
+      numSpan[i].innerText = cI;
+    }
     wrongCharacter.innerText = "";
   }
 };
