@@ -1,5 +1,12 @@
+body{
+    width: 550px;
+    height: 285px;
+    flex-shrink: 0;
+    margin: auto;
+    background-color: lavender;
+}
 main {
-    margin: 0px;
+    margin: 25px 0px 35px 0px;
     padding: 0px;
     color: #fff;
 }
@@ -52,12 +59,15 @@ h3 {
 
 .toggleDiv {
     display: flex;
-    align-items: flex-start;
-    justify-content: left;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 label {
     margin-right: 15px;
+    color: #10B981;
+    font-weight: bolder;
+    font-size: 1.24em;
 }
 
 /* Light Mode Default */
@@ -101,8 +111,7 @@ button {
 }
 
 #convert {
-   
-    margin: 0;
+    margin:  0;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -116,7 +125,7 @@ button {
 
 .measure{
     width: 500px;
-    height: 108.573px;
+    /* height: 108.573px; */
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
@@ -125,7 +134,7 @@ button {
     border-radius: 4.681px 0px 0px 0px;
     background: var(--white, #FFF);
     margin: 15px auto;
-    padding: 15px;
+    /* padding: 15px; */
 
 }
 
@@ -137,6 +146,7 @@ button {
     font-style: normal;
     font-weight: 600;
     padding: 0;
+    margin: 15px;
 }
 
 .measure p {
