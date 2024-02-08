@@ -21,5 +21,6 @@ const input = document.getElementById("input-field");
 addBtn.addEventListener("click", () => {
   let inputValue = input.value;
   push(shoppingListInDB, inputValue);
-  shoppingListUl.innerHTML = `<li>${inputValue}</li>`;
+  shoppingListUl.innerHTML += `<li>${inputValue}</li>`;
+  input.value = "";
 });
