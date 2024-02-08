@@ -5,6 +5,8 @@ import {
   push,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
+const shoppingListUl = document.getElementById("shopping-list");
+
 const appSettings = {
   databaseURL: "https://realtime-database-34a94-default-rtdb.firebaseio.com/",
 };
@@ -19,5 +21,5 @@ const input = document.getElementById("input-field");
 addBtn.addEventListener("click", () => {
   let inputValue = input.value;
   push(shoppingListInDB, inputValue);
-  console.log(inputValue);
+  shoppingListUl.innerHTML = `<li>${inputValue}</li>`;
 });
